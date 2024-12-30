@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:rootsapp/Screen/attendancescreen.dart';
 import 'package:rootsapp/Screen/changepassword.dart';
+import 'package:rootsapp/Screen/loginscreen.dart';
 import 'package:rootsapp/Screen/myodrderscreen.dart';
 import 'package:rootsapp/Screen/productdetailsscreen.dart';
 import 'package:rootsapp/Screen/profilescreen.dart';
+import 'package:rootsapp/Screen/salesreport/manage_customer_screen.dart';
 import 'package:rootsapp/Screen/salesreportscreen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -438,64 +440,78 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    width: 160,
-                    height: 160,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Padding(
-                            padding: const EdgeInsets.all(30),
-                            child: Image(
-                              image: AssetImage('images/seven.png'),
-                              width: 60,
-                              height: 60,
-                              fit: BoxFit.contain,
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>ManageCustomerScreen())
+                      );
+                    },
+                    child: Container(
+                      width: 160,
+                      height: 160,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Padding(
+                              padding: const EdgeInsets.all(30),
+                              child: Image(
+                                image: AssetImage('images/seven.png'),
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
-                        ),
-                        Center(
-                            child: Text(
-                          'ManageCustomer',
-                          style:
-                              TextStyle(color: Colors.black87, fontSize: 18),
-                        )),
-                      ],
+                          Center(
+                              child: Text(
+                            'ManageCustomer',
+                            style:
+                                TextStyle(color: Colors.black87, fontSize: 18),
+                          )),
+                        ],
+                      ),
                     ),
                   ),
-                  Container(
-                    width: 160,
-                    height: 160,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Padding(
-                            padding: const EdgeInsets.all(30),
-                            child: Image(
-                              image: AssetImage('images/eight.png'),
-                              width: 60,
-                              height: 60,
-                              fit: BoxFit.contain,
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>LoginScreen()),
+                      );
+                    },
+                    child: Container(
+                      width: 160,
+                      height: 160,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Padding(
+                              padding: const EdgeInsets.all(30),
+                              child: Image(
+                                image: AssetImage('images/eight.png'),
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
-                        ),
-                        Center(
-                            child: Text(
-                          'Logout',
-                          style:
-                              TextStyle(color: Colors.black87, fontSize: 18),
-                        )),
-                      ],
+                          Center(
+                              child: Text(
+                            'Logout',
+                            style:
+                                TextStyle(color: Colors.black87, fontSize: 18),
+                          )),
+                        ],
+                      ),
                     ),
                   ),
                 ],
